@@ -1,4 +1,5 @@
 let TD_debounce = false;
+let PP_debounce = false;
 
 $(document).ready(() => {
     const track = new Audio("_assets/bgmusic.mp3");
@@ -16,39 +17,36 @@ $(document).ready(() => {
         $("#subtitle").fadeIn(1600);
         $("#play-pause").fadeIn(1600);
         $(".grid-item").css("visibility", "visible").hide().fadeIn(3200);
+        $(".nav-item").css("visibility", "visible").hide().fadeIn(3200);
         track.play();
     });
 
     //music controls
-    $("#pause").click(() => {
-        track.pause();
-        $("#pause").css("visibility", "hidden");
-        $("#play").show();
+    $("#play-pause").click(() => {
+        if (PP_debounce == false){
+            PP_debounce = true
+
+            track.pause();
+            $("#pause").css("visibility", "hidden");
+            $("#play").show();
+
+        } else {
+            PP_debounce = false 
+
+            track.play();
+            $("#pause").css("visibility", "visible");
+            $("#play").hide();
+        }
     });
 
-    $("#play").click(() => {
-        track.play();
-        $("#pause").css("visibility", "visible");
-        $("#play").hide();
+    //links
+    $("#grid-div").on("click", "div", function() {
+        const page = this.id; 
+        window.open(`${page}/${page}.html`, "_blank", "noopener,noreferrer");
     });
 
-    //opens about page
-    $("#about").click(() => {
-        window.open("about/about.html", "_blank", "noopener,noreferrer");
-    });
-
-    //opens contacts page
-    $("#contacts").click(() => {
-        window.open("contacts/contacts.html", "_blank", "noopener,noreferrer");
-    });
-
-    //opens projects page
-    $("#projects").click(() => {
-        window.open("projects/projects.html", "_blank", "noopener,noreferrer");
-    });
-
-    //opens something page
-    $("#something").click(() => {
-        window.open("something/something.html", "_blank", "noopener,noreferrer");
+    $(".navbar").on("click", "p", function() {
+        const page = this.id;
+        window.open(`${page}/${page}.html`, "_blank", "noopener,noreferrer");
     });
 });

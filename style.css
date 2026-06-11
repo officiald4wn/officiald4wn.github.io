@@ -1,12 +1,4 @@
 body {
-    background-color: black;
-    color: white;
-
-    font-family: monospace;
-    font-size: 200%;
-
-    margin: 2.5%;
-
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none; 
@@ -73,6 +65,8 @@ body {
 }
 
 .grid-item {visibility: hidden;}
+
+.nav-item {visibility: hidden;}
 
 .header {grid-area: header;}
 
