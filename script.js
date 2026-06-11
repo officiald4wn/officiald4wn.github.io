@@ -6,6 +6,7 @@ $(document).ready(() => {
 
     console.log("WEBSITE LOADED");
 
+    //first click
     $("#title-div").click(() => {
         if (TD_debounce) return;
         TD_debounce = true;
@@ -16,9 +17,9 @@ $(document).ready(() => {
         $("#play-pause").fadeIn(1600);
         $(".grid-item").css("visibility", "visible").hide().fadeIn(3200);
         track.play();
-        
     });
 
+    //music controls
     $("#pause").click(() => {
         track.pause();
         $("#pause").css("visibility", "hidden");
@@ -31,7 +32,13 @@ $(document).ready(() => {
         $("#play").hide();
     });
 
+    //opens about page
     $("#about").click(() => {
         window.open("about/about.html", "_blank", "noopener,noreferrer");
+    });
+
+    //opens contacts page
+    $("#contacts").click(() => {
+        window.open("contacts/contacts.html", "_blank", "noopener,noreferrer");
     });
 });

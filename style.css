@@ -2,19 +2,14 @@ body {
     background-color: black;
     color: white;
 
-    margin: 2.5%;
-
     font-family: monospace;
     font-size: 200%;
+
+    margin: 2.5%;
 
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none; 
-
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
 
 .title-div {
@@ -28,25 +23,6 @@ body {
     justify-content: center;
 
     padding: 5% 5% 2.5% 5%;
-}
-
-.break {
-    flex-basis: 100%;
-    height: 0;
-    margin-top: 1%;
-}
-
-.title {
-    font-size: 200%;
-    font-weight: bold;
-}
-
-.subtitle {
-    font-size: 75%;
-}
-
-.left {
-    margin-right: auto;
 }
 
 .play-pause {
@@ -65,7 +41,7 @@ body {
 
     grid-template-areas:
         "header header"
-        "menu contacts"
+        "contacts menu"
         "footer footer";
     grid-template-columns: 1fr 3fr;
 }
@@ -96,22 +72,12 @@ body {
     border-color: white;
 }
 
-.grid-item {
-    visibility: hidden;
-}
+.grid-item {visibility: hidden;}
 
-.header {
-    grid-area: header;
-}
+.header {grid-area: header;}
 
-.menu {
-    grid-area: menu;
-}
+.menu {grid-area: menu;}
 
-.contacts {
-    grid-area: contacts;
-}
+.contacts {grid-area: contacts;}
 
-.footer {
-    grid-area: footer;
-}
+.footer {grid-area: footer;}
