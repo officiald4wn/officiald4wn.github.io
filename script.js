@@ -41,4 +41,14 @@ $(document).ready(() => {
     $("#contacts").click(() => {
         window.open("contacts/contacts.html", "_blank", "noopener,noreferrer");
     });
+
+    //opens projects page
+    $("#projects").click(() => {
+        window.open("projects/projects.html", "_blank", "noopener,noreferrer");
+    });
+
+    //opens something page
+    $("#something").click(() => {
+        window.open("something/something.html", "_blank", "noopener,noreferrer");
+    });
 });
