@@ -1,7 +1,7 @@
 let TD_debounce = false;
 
 $(document).ready(() => {
-    const track = new Audio("assets/bgmusic.mp3");
+    const track = new Audio("_assets/bgmusic.mp3");
     track.loop = true;
 
     console.log("WEBSITE LOADED");
