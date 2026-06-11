@@ -69,3 +69,40 @@
     display: flex;
     justify-content: center;
 }
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    font-size: 75%;
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    margin: -5% 0% 0% 0%;
+
+    grid-template-areas: "about contacts projects something blank";
+    grid-template-columns: repeat(4, 1fr) 6fr;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    background-color: #DDD;
+    border-color: #777;
+    border-style: solid; 
+    border-width: 5%;
+    margin-right: 2%;
+    border-radius: 5%;
+}
+
+.about {grid-area: about;}
+
+.contacts {grid-area: contacts;}
+
+.projects {grid-area: projects;}
+
+.something {grid-area: something;}
+
+.current {
+    background-color: #222;
+    color: #FFF;
+    border-color: #DDD;
+}
