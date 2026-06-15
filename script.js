@@ -42,11 +42,11 @@ $(document).ready(() => {
     //links
     $("#grid-div").on("click", "div", function() {
         const page = this.id; 
-        window.open(`${page}/${page}.html`, "_blank", "noopener,noreferrer");
+        window.open(`_mainpages/${page}/${page}.html`, "_blank", "noopener,noreferrer");
     });
 
     $(".navbar").on("click", "p", function() {
         const page = this.id;
-        window.open(`${page}/${page}.html`, "_blank", "noopener,noreferrer");
+        window.open(`_mainpages/${page}/${page}.html`, "_blank", "noopener,noreferrer");
     });
 });
