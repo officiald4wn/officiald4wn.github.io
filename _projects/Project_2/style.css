@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: white;
+
+    font-family: monospace;
+    font-size: 200%; 
+    
+    margin: 2.5%;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {display: none;}
+
+.return-div {
+    position: absolute;
+
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+    border-style: solid;
+    border-color: #DDD;
+    border-width: 5%;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 2.5%;
+    border-radius: 15%;
+}
+
+.left {margin-right: auto;}
+
+.center {
+    display: inline-block;
+    text-align: center;
+}
+
+.center-parent {
+    text-align: center;
+}
+
+.title {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.subtitle {font-size: 75%;}
