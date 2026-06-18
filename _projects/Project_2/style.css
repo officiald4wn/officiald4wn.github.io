@@ -48,3 +48,44 @@ body {
 }
 
 .subtitle {font-size: 75%;}
+
+.subtitle2 {font-size: 75%;}
+
+.form-div {
+    background-color: #050505;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #DDD;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 20px;
+    margin: 5px;
+}
+
+.parent-div {
+    display: flex;
+}
+
+.Info {
+    background-color: white;
+    color: black;
+     border-style: solid;
+    border-width: 5px;
+    border-color: #333;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 20px;
+    margin: 5px;
+}
+
+.main-div {
+    background-color: white;
+    color: black;
+
+    width: fit-content;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    border-color: #444;
+    padding: 0px 10px;
+}

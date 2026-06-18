@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="../../_extensions/jquery-4.0.0.min.js"></script>
-    <script src="../../_extensions/pizzip.min.js"></script>
-    <script src="../../_extensions/pizzip-utils.min.js"></script>
-    <script src="../../_extensions/docxtemplater.min.js"></script>
-    <script src="../../_extensions/FileSaver.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script type="module" src="info.js"></script>
     <link rel="stylesheet" href="style.css">
 
-    <title>Project 1</title>
+    <title>Project 2</title>
 </head>
 <body>
     <div id="return-div" class="return-div left">
@@ -21,9 +18,26 @@
 
     <div class="center-parent">
         <p id="title" class="title center">Welcome</p><br>
-        <p class="subtitle center">(made by dwn)</p><br>
-        <p id="subtitle" class="subtitle center">(click the title to toggle the return button)</p>
+        <p class="subtitle2 center">(made by dwn)</p><br>
+        <p class="subtitle center">(click the title to toggle the return button)</p><br>
+        <p class="subtitle center">(if you were returned back to this page from login, you have typed the wrong password)</p>
     </div>
     
+    <div class="main-div">  
+        <p class="subtitle">this website will display important info for the day and upcoming week</p>
+    </div>
+
+    <button id="update">Update Info</button>
+
+    <div class="center-parent">
+        <div id="Info" class="Info center">
+            <p id="Date">[date]</p>
+            <p id="Day">[day]</p>
+            <p id="Schedule">[schedule]</p>
+            <p id="Quizzes">[upcoming quizzes]</p>
+            <p id="PAs">[upcoming PAs]</p>
+            <p id="Events">[upcoming Events]</p>
+        </div>
+    </div>
 </body>
 </html>
