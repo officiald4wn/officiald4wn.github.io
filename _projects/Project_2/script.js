@@ -34,8 +34,8 @@ $(document).ready(() => {
     const dateformat = date.toLocaleDateString('en-US', options);
     const dayformat = date.toLocaleDateString('en-US', options2);
 
-    $("#Date").text(dateformat);
-    $("#Day").text(dayformat);
+    $("#Date").text(`${dateformat} (${dayformat})`);
+    $("#copydate").text(`Date: ${dateformat} (${dayformat})`);
 
     //schedule (from JSON)
     let schedvalue
@@ -47,7 +47,8 @@ $(document).ready(() => {
 
         if (match) {
             schedvalue = jsonData[match];
-            $("#Schedule").text(schedvalue);
+            $("#Schedule").text(`Subjects today: ${schedvalue}`);
+            $("#copyschedule").text(`Schedule: ${schedvalue}`);
         } else {
             $("#Schedule").text("[System Error]");
         }
@@ -194,6 +195,10 @@ $(document).ready(() => {
         $("#download-PA").prop("hidden", true);
     })
 
+    const getDaysDiff = (start, end) => {
+        const msPerDay = 1000 * 60 * 60 * 24;
+        return Math.floor(Math.abs(end - start) / msPerDay);
+    };
     //matching dates to events
         //getting every date for next week
     const getNextWeekDates = () => {
@@ -213,21 +218,144 @@ $(document).ready(() => {
     };
     
         //code
+    //quiz info text
     fetch('../../_assets/info/quizinfo.json')
     .then(response => response.json())
     .then(dataArray => { //this is an array of objects (quizname: quizdate)
         let weekdays = getNextWeekDates() //this is an array
 
-        const matchedKeys = dataArray.flatMap(obj => 
+        const today = new Date(weekdays[0]);
+        today.setHours(0, 0, 0, 0);
+
+        const mK = dataArray.flatMap(obj => 
             Object.keys(obj).filter(key => weekdays.includes(obj[key]))
         );
 
-        $("#Quizzes").text(matchedKeys);
+        const mV = dataArray.flatMap(obj => 
+            Object.entries(obj)
+                .filter(([key, value]) => weekdays.includes(value))
+                .map(([key, value]) => value) // Extracts the value
+        );
+
+        const combinedText = mK.length > 0 
+            ? mK.map((key, index) => {
+            const eventDate = new Date(mV[index]);
+            eventDate.setHours(0, 0, 0, 0); 
+            
+            const msPerDay = 1000 * 60 * 60 * 24;
+            const daysLeft = Math.round((eventDate - today) / msPerDay);
+            
+            let trackerText = "";
+            if (daysLeft === 0) {
+                trackerText = " (Today)";
+            } else if (daysLeft === 1) {
+                trackerText = " (Tomorrow)";
+            } else {
+                trackerText = ` (in ${daysLeft} days)`;
+            }
+            return `${key} on ${mV[index]}${trackerText}`;
+        }):
+        [ '[none]' ];
+
+        $("#Quizzes").html(combinedText.join("<br>"));
+        $("#copyquizzes").html('Quizzes: <br>' + combinedText.join("<br>"));
     })
     .catch(error => console.error('Error fetching data:', error));
 
-    
+    //pa info text
+    fetch('../../_assets/info/painfo.json')
+    .then(response => response.json())
+    .then(dataArray => { //this is an array of objects
+        let weekdays = getNextWeekDates() //this is an array
+
+        const today = new Date(weekdays[0]);
+        today.setHours(0, 0, 0, 0);
+
+        const mK = dataArray.flatMap(obj => 
+            Object.keys(obj).filter(key => weekdays.includes(obj[key]))
+        );
+
+        const mV = dataArray.flatMap(obj => 
+            Object.entries(obj)
+                .filter(([key, value]) => weekdays.includes(value))
+                .map(([key, value]) => value) // Extracts the value
+        );
+
+        const combinedText = mK.length > 0 
+            ? mK.map((key, index) => {
+            const eventDate = new Date(mV[index]);
+            eventDate.setHours(0, 0, 0, 0); 
+            
+            const msPerDay = 1000 * 60 * 60 * 24;
+            const daysLeft = Math.round((eventDate - today) / msPerDay);
+            
+            let trackerText = "";
+            if (daysLeft === 0) {
+                trackerText = " (Today)";
+            } else if (daysLeft === 1) {
+                trackerText = " (Tomorrow)";
+            } else {
+                trackerText = ` (in ${daysLeft} days)`;
+            }
+            return `${key} on ${mV[index]}${trackerText}`;
+        }):
+        [ '[none]' ];
+
+        $("#PAs").html(combinedText.join("<br>"));
+        $("#copyPAs").html('PAs: <br>' + combinedText.join("<br>"));
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+    //event info text
+    fetch('../../_assets/info/eventinfo.json')
+    .then(response => response.json())
+    .then(dataArray => { //this is an array of objects
+        let weekdays = getNextWeekDates() //this is an array
+
+        const today = new Date(weekdays[0]);
+        today.setHours(0, 0, 0, 0);
+
+        const mK = dataArray.flatMap(obj => 
+            Object.keys(obj).filter(key => weekdays.includes(obj[key]))
+        );
+
+        const mV = dataArray.flatMap(obj => 
+            Object.entries(obj)
+                .filter(([key, value]) => weekdays.includes(value))
+                .map(([key, value]) => value) // Extracts the value
+        );
+
+        const combinedText = mK.length > 0 
+            ? mK.map((key, index) => {
+            const eventDate = new Date(mV[index]);
+            eventDate.setHours(0, 0, 0, 0); 
+            
+            const msPerDay = 1000 * 60 * 60 * 24;
+            const daysLeft = Math.round((eventDate - today) / msPerDay);
+            
+            let trackerText = "";
+            if (daysLeft === 0) {
+                trackerText = " (Today)";
+            } else if (daysLeft === 1) {
+                trackerText = " (Tomorrow)";
+            } else {
+                trackerText = ` (in ${daysLeft} days)`;
+            }
+            return `${key} on ${mV[index]}${trackerText}`;
+        }):
+        [ '[none]' ];
+
+        $("#Events").html(combinedText.join("<br>"));
+        $("#copyevents").html('Other Events: <br>' + combinedText.join("<br>"));
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+    $("#autotext").click(function(){
+        $(".copypaste-div").toggle()
+    })
 });
+
+
 
 function logback(){
     window.open("index.html", "_self", "noopener,noreferrer");

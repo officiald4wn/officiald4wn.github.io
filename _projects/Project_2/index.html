@@ -27,15 +27,33 @@
     </div>
 
     <button id="update">Update Info</button>
+    <button id="autotext">Generate as text (copy-paste)</button>
 
-    <div class="center-parent">
+    <div class="center-parent parentdiv">
         <div id="Info" class="Info center">
             <p id="Date">[date]</p>
-            <p id="Day">[day]</p>
             <p id="Schedule">[schedule]</p>
+
+            <br>
+            <label for="Quizzes">Upcoming Quizzes:</label>
             <p id="Quizzes">[upcoming quizzes]</p>
+
+            <br>
+            <label for="PAs">Upcoming PAs:</label>
             <p id="PAs">[upcoming PAs]</p>
+
+            <br>
+            <label for="Events">Upcoming Events:</label>
             <p id="Events">[upcoming Events]</p>
+        </div>
+
+        <div class="copypaste-div">
+            <p>**this is an automated message**</p>
+            <span id="copydate">Date: </span><br>
+            <span id="copyschedule">Schedule: </span><br><br>
+            <p id="copyquizzes">Quizzes: </p>
+            <p id="copyPAs">PAs: </p>
+            <p id="copyevents">events: </p>
         </div>
     </div>
 </body>
