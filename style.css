@@ -1,77 +1,82 @@
 body {
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
+    background-color: #050505;
+    color: #fff;
+
+    padding: 25px;
+}
+
+.click-div {
+    background-color: #000;
+    color: #fff;
+
+    font-size: 200%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+
+    width: 100vw;
+    min-height: 100vh;
+    top: 0;
+
+    position: absolute;
 }
 
 .title-div {
-    background-color: white;
-    color: black;
+    background-color: #72459c;
+    color: #fff;
 
-    line-height: 2em;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #151515;
+    border-radius: 20px;
+
+    font-size: 150%;
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-
-    padding: 5% 5% 2.5% 5%;
-}
-
-.play-pause {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-
-    justify-content: center;
-
-    padding: 2.5% 2.5% 1.5% 2.5%;
-    border-radius: 15%;
-}
-
-.grid-div {
-    display: grid;
-    padding-top: 2%;
-
-    grid-template-areas:
-        "header header"
-        "contacts menu"
-        "footer footer";
-    grid-template-columns: 1fr 3fr;
-}
-
-.grid-div div {
-    background-color: white;
-    color: black;
-    border-color: #111111;
-    border-width: 5%;
-    border-style: solid;
-
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    justify-self: center;
 
-    font-size: 75%;
+    width: 50vw;
 
-    padding: 5%;
-
-    transition: background-color 1s ease;
-    transition: color 1s ease;
-    transition: border-color 1s ease;
+    margin: 20px;
+    padding: 10px;
 }
 
-.grid-div div:hover {
-    background-color: #111111;
-    color: white;
-    border-color: white;
+.side-div {
+    background-color: #444;
+    color: #000;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: #151515;
+    border-radius: 20px;
+
+    font-size: 125%;
+
+    width: fit-content;
+
+    padding: 10px;
 }
 
-.grid-item {visibility: hidden;}
+.side-div-item {
+    background-color: #fff;
 
-.nav-item {visibility: hidden;}
+    border-style: solid;
+    border-width: 5px;
+    border-color: #242424;
 
-.header {grid-area: header;}
+    width: fit-content;
 
-.menu {grid-area: menu;}
+    padding: 5px 20px;
+    margin: 10px 0px;
 
-.contacts {grid-area: contacts;}
+    transition: background-color 0.75s ease;
+}
 
-.footer {grid-area: footer;}
+.side-div-item:hover {
+    background-color: #aaa;
+}

@@ -4,42 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="_extensions/jquery-4.0.0.min.js"></script>
+    <script type="text/javascript" src="/_extensions/jquery-4.0.0.min.js"></script>
+    <script type="text/javascript" src="/_extensions/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/_extensions/bootstrap.min.css">
+
+    <script type="text/javascript" src="/_shared/sharedscript.js"></script>
+    <link rel="stylesheet" href="/_shared/sharedstyle.css">
+    
     <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" href="_sharedfiles/shared.css"> 
     <link rel="stylesheet" href="style.css">
 
-    <title>Homepage</title>
+    <title>Homepage v2</title>
 </head>
 <body>
-
-    <!--top part--> 
-    <div id="title-div" class="title-div">
-        <div class="navbar">
-            <p id="about" class="nav-item about" hidden>about</p>
-            <p id="contacts" class="nav-item contacts" hidden>contacts</p>
-            <p id="projects" class="nav-item projects" hidden>projects</p>
-            <p id="something" class="nav-item something" hidden>something</p>
-        </div>
-
-        <p id="title" class="title">Welcome</p>
-        <div class="break"></div>
-        <p id="hint" class="subtitle">[click to proceed]</p>
-        <p id="subtitle" class="subtitle" hidden>(made by dwn)</p>
-        <div class="break"></div>
-
-        <div id="play-pause" class="play-pause left" hidden>
-            <img id="play" style="position: absolute;" src="_assets/play.png" alt="Play" draggable="false" hidden>
-            <img id="pause" src="_assets/pause.png" alt="Pause" draggable="false">
-        </div>
+    <div id="click-div" class="click-div">
+        <span>[ click to enter ]</span>
     </div>
 
-    <!--grid part-->
-    <div id="grid-div" class="grid-div">
-        <div id="about" class="grid-item header" hidden>About</div>
-        <div id="contacts" class="grid-item contacts" hidden>Contacts</div>
-        <div id="projects" class="grid-item menu" hidden>Projects</div>
-        <div id="something" class="grid-item footer" hidden>something <br>[wip]</div>
-    </div>
+    <header class="title-div">
+        <span>Welcome!1!!</span>
+        <div class="break"></div> 
+        <span><u>madebydwn</u></span>
+    </header>
+
+    <aside class="side-div">
+        <div class="side-div-item">
+            <span>About</span>
+        </div>
+        
+        <div class="side-div-item">
+            <span>Contacts</span>
+        </div>
+
+        <div class="side-div-item">
+            <span>Projects</span>
+        </div>
+
+        <div class="side-div-item">
+            <span>[WIP]</span>
+        </div>
+    </aside>
+
+    <p>[site is undergoing heavy renovation, come back later.]</p>
 </body>
-</html>
+</html> 
