@@ -47,7 +47,7 @@ body {
 }
 
 .side-div {
-    background-color: #444;
+    background-color: #303030;
     color: #000;
 
     border-style: solid;
@@ -60,6 +60,8 @@ body {
     width: fit-content;
 
     padding: 10px;
+
+    position: absolute;
 }
 
 .side-div-item {
@@ -72,11 +74,59 @@ body {
     width: fit-content;
 
     padding: 5px 20px;
-    margin: 10px 0px;
+    margin: 10px 25px;
+    box-sizing: border-box;
 
     transition: background-color 0.75s ease;
+    transition: padding 0.75s ease;
 }
 
 .side-div-item:hover {
     background-color: #aaa;
+    padding: 10px 100px;
+}
+
+.main-div {
+    background-color: #fff;
+    color: #000000;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: #6328c8;
+    border-radius: 20px;
+
+    width: 58%;
+
+    display: flex;
+    justify-self: center;
+
+    flex-wrap: wrap;
+
+    padding: 20px;
+}
+
+.main-div-title {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-5px); }
+}
+
+.animate-show {
+  display: flex !important;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-hide {
+  display: flex !important;
+  animation: fadeOut 0.3s ease forwards;
 }

@@ -26,10 +26,10 @@
 <script type="text/javascript" src="/_extensions/jquery-4.0.0.min.js"></script>
 <link rel="stylesheet" href="/_extensions/animate.min.css">
 
-<script type="text/javascript" src="../../_extensions/pizzip.min.js"></script>
-<script type="text/javascript" src="../../_extensions/pizzip-utils.min.js"></script>
-<script type="text/javascript" src="../../_extensions/docxtemplater.min.js"></script>
-<script type="text/javascript" src="../../_extensions/FileSaver.min.js"></script>
+<script type="text/javascript" src="/_extensions/pizzip.min.js"></script>
+<script type="text/javascript" src="/_extensions/pizzip-utils.min.js"></script>
+<script type="text/javascript" src="/_extensions/docxtemplater.min.js"></script>
+<script type="text/javascript" src="/_extensions/FileSaver.min.js"></script>
 
 <script type="text/javascript" src="/_extensions/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="/_extensions/bootstrap.min.css">

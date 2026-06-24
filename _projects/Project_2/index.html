@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/_extensions/jquery-4.0.0.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Project 2</title>
+</head>
+<body>
+    <div id="return-div" class="return-div left">
+        <img src="../../_assets/return.png" alt="Return" draggable="false" onclick="window.close()">
+    </div>
+
+    <div class="center-parent">
+        <p id="title" class="title center">Welcome</p><br>
+        <p class="subtitle2 center">(made by dwn)</p><br>
+        <p class="subtitle center">(click the title to toggle the return button)</p><br>
+        <p class="subtitle center">(if you were returned back to this page from login, you have typed the wrong password)</p>
+    </div>
+    
+    <div class="main-div">  
+        <p class="subtitle2">this website will display important info for the day and upcoming week</p>
+    </div>
+
+    <button id="update">Update Info</button>
+    <button id="autotext">Generate as text (copy-paste)</button>
+
+    <div class="center-parent parentdiv">
+        <div id="Info" class="Info center">
+            <p id="Date">[date]</p>
+            <p id="Schedule">[schedule]</p>
+
+            <br>
+            <label for="Quizzes">Upcoming Quizzes:</label>
+            <p id="Quizzes">[upcoming quizzes]</p>
+
+            <br>
+            <label for="PAs">Upcoming PAs:</label>
+            <p id="PAs">[upcoming PAs]</p>
+
+            <br>
+            <label for="Events">Upcoming Events:</label>
+            <p id="Events">[upcoming Events]</p>
+        </div>
+
+        <div class="copypaste-div">
+            <p>**this is an automated message**</p>
+            <span id="copydate">Date: </span><br>
+            <span id="copyschedule">Schedule: </span><br><br>
+            <p id="copyquizzes">Quizzes: </p>
+            <p id="copyPAs">PAs: </p>
+            <p id="copyevents">events: </p>
+        </div>
+    </div>
+</body>
+</html>
