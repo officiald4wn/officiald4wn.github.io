@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script type="text/javascript" src="/_extensions/jquery-4.0.0.min.js"></script>
+    <script type="text/javascript" src="/_extensions/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/_extensions/bootstrap.min.css">
+
     <script type="text/javascript" src="/_extensions/pizzip.min.js"></script>
     <script type="text/javascript" src="/_extensions/pizzip-utils.min.js"></script>
     <script type="text/javascript" src="/_extensions/docxtemplater.min.js"></script>
     <script type="text/javascript" src="/_extensions/FileSaver.min.js"></script>
     
+    <script type="text/javascript" src="/_shared/sharedscript.js"></script>
+    <link rel="stylesheet" href="/_shared/sharedstyle.css">
+
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 
@@ -17,7 +23,7 @@
 </head>
 <body>
     <div id="return-div" class="return-div left">
-        <button onclick="window.close()">[RETURN]</button>
+        <button onclick="window.close()">[ RETURN ]</button>
     </div>
 
     <div class="center-parent">
@@ -28,7 +34,7 @@
 
     <br><br>
     <div class="main-div">
-        <p class="subtitle">this form will generate an ms word document using given inputs</p>
+        <span class="subtitle">this form will generate an ms word document using given inputs</span>
     </div>
 
     <form id="main-form" onkeydown="return event.key !== 'Enter';">

@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="../../_extensions/jquery-4.0.0.min.js"></script>
+    <script src="/_extensions/jquery-4.0.0.min.js"></script>
+    <script type="text/javascript" src="/_extensions/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/_extensions/bootstrap.min.css">
+
+    <script type="text/javascript" src="/_shared/sharedscript.js"></script>
+    <link rel="stylesheet" href="/_shared/sharedstyle.css">
+
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <title>Project 2 - Update Info</title>
 
     <script type="text/javascript">
-        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-            alert('Access Denied. Please log in.');
-            window.location.href = 'login.html';
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+            alert("Access Denied. Please log in.");
+            window.location.href = "login.html";
         }
     </script>   
 </head>
 <body>
     <div id="return-div" class="return-div left">
-        <img src="../../_assets/return.png" alt="Return" draggable="false" onclick="logback()">
+        <button onclick="window.close()">[ RETURN ]</button>
     </div>
 
     <div class="center-parent">
