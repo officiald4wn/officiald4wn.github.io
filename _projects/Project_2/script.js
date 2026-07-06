@@ -203,7 +203,7 @@ $(document).ready(() => {
         //getting every date for next week
     const getNextWeekDates = () => {
         const dates = [];
-        for (let i = 0; i <= 7; i++) {
+        for (let i = 0; i <= 14; i++) {
             const currentDate = new Date();
             currentDate.setDate(currentDate.getDate() + i);
             let formOptions = { 
@@ -238,24 +238,33 @@ $(document).ready(() => {
         );
 
         const combinedText = mK.length > 0 
-            ? mK.map((key, index) => {
-            const eventDate = new Date(mV[index]);
-            eventDate.setHours(0, 0, 0, 0); 
-            
-            const msPerDay = 1000 * 60 * 60 * 24;
-            const daysLeft = Math.round((eventDate - today) / msPerDay);
-            
-            let trackerText = '';
-            if (daysLeft === 0) {
-                trackerText = ' (Today)';
-            } else if (daysLeft === 1) {
-                trackerText = ' (Tomorrow)';
-            } else {
-                trackerText = ` (in ${daysLeft} days)`;
-            }
-            return `${key} on ${mV[index]}${trackerText}`;
-        }):
-        [ '[none]' ];
+            ? mK.map((key, index) => ({
+                key,
+                dateString: mV[index],
+                dateObj: new Date(mV[index])
+            }))
+            .sort((a, b) => a.dateObj - b.dateObj) 
+            .map(({ key, dateString, dateObj }) => {
+                const eventDate = new Date(dateObj);
+                eventDate.setHours(0, 0, 0, 0); 
+                
+                const msPerDay = 1000 * 60 * 60 * 24;
+                const daysLeft = Math.round((eventDate - today) / msPerDay);
+                
+                let trackerText = '';
+                if (daysLeft === 0) {
+                    trackerText = ' (Today)';
+                } else if (daysLeft === 1) {
+                    trackerText = ' (Tomorrow)';
+                } else if (daysLeft < 0) {
+                    trackerText = ` (${Math.abs(daysLeft)} days ago)`;
+                } else {
+                    trackerText = ` (in ${daysLeft} days)`;
+                }
+                
+                return `${key} on ${dateString}${trackerText}`;
+            })
+        : [ '[none]' ];
 
         $('#Quizzes').html(combinedText.join('<br>'));
         $('#copyquizzes').html('Quizzes: <br>' + combinedText.join('<br>'));
@@ -282,24 +291,33 @@ $(document).ready(() => {
         );
 
         const combinedText = mK.length > 0 
-            ? mK.map((key, index) => {
-            const eventDate = new Date(mV[index]);
-            eventDate.setHours(0, 0, 0, 0); 
-            
-            const msPerDay = 1000 * 60 * 60 * 24;
-            const daysLeft = Math.round((eventDate - today) / msPerDay);
-            
-            let trackerText = '';
-            if (daysLeft === 0) {
-                trackerText = ' (Today)';
-            } else if (daysLeft === 1) {
-                trackerText = ' (Tomorrow)';
-            } else {
-                trackerText = ` (in ${daysLeft} days)`;
-            }
-            return `${key} on ${mV[index]}${trackerText}`;
-        }):
-        [ '[none]' ];
+            ? mK.map((key, index) => ({
+                key,
+                dateString: mV[index],
+                dateObj: new Date(mV[index])
+            }))
+            .sort((a, b) => a.dateObj - b.dateObj) 
+            .map(({ key, dateString, dateObj }) => {
+                const eventDate = new Date(dateObj);
+                eventDate.setHours(0, 0, 0, 0); 
+                
+                const msPerDay = 1000 * 60 * 60 * 24;
+                const daysLeft = Math.round((eventDate - today) / msPerDay);
+                
+                let trackerText = '';
+                if (daysLeft === 0) {
+                    trackerText = ' (Today)';
+                } else if (daysLeft === 1) {
+                    trackerText = ' (Tomorrow)';
+                } else if (daysLeft < 0) {
+                    trackerText = ` (${Math.abs(daysLeft)} days ago)`;
+                } else {
+                    trackerText = ` (in ${daysLeft} days)`;
+                }
+                
+                return `${key} on ${dateString}${trackerText}`;
+            })
+        : [ '[none]' ];
 
         $('#PAs').html(combinedText.join('<br>'));
         $('#copyPAs').html('PAs: <br>' + combinedText.join('<br>'));
@@ -326,24 +344,33 @@ $(document).ready(() => {
         );
 
         const combinedText = mK.length > 0 
-            ? mK.map((key, index) => {
-            const eventDate = new Date(mV[index]);
-            eventDate.setHours(0, 0, 0, 0); 
-            
-            const msPerDay = 1000 * 60 * 60 * 24;
-            const daysLeft = Math.round((eventDate - today) / msPerDay);
-            
-            let trackerText = '';
-            if (daysLeft === 0) {
-                trackerText = ' (Today)';
-            } else if (daysLeft === 1) {
-                trackerText = ' (Tomorrow)';
-            } else {
-                trackerText = ` (in ${daysLeft} days)`;
-            }
-            return `${key} on ${mV[index]}${trackerText}`;
-        }):
-        [ '[none]' ];
+            ? mK.map((key, index) => ({
+                key,
+                dateString: mV[index],
+                dateObj: new Date(mV[index])
+            }))
+            .sort((a, b) => a.dateObj - b.dateObj) 
+            .map(({ key, dateString, dateObj }) => {
+                const eventDate = new Date(dateObj);
+                eventDate.setHours(0, 0, 0, 0); 
+                
+                const msPerDay = 1000 * 60 * 60 * 24;
+                const daysLeft = Math.round((eventDate - today) / msPerDay);
+                
+                let trackerText = '';
+                if (daysLeft === 0) {
+                    trackerText = ' (Today)';
+                } else if (daysLeft === 1) {
+                    trackerText = ' (Tomorrow)';
+                } else if (daysLeft < 0) {
+                    trackerText = ` (${Math.abs(daysLeft)} days ago)`;
+                } else {
+                    trackerText = ` (in ${daysLeft} days)`;
+                }
+                
+                return `${key} on ${dateString}${trackerText}`;
+            })
+        : [ '[none]' ];
 
         $('#Events').html(combinedText.join('<br>'));
         $('#copyevents').html('Other Events: <br>' + combinedText.join('<br>'));

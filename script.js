@@ -2,8 +2,8 @@
 const aboutMessage = 
 `Welcome to the reworked webpage. <br>
 This is still in heavy development. <br><br>
-Last updated on [--(06/25/26)--] <br>
-Updates: Added sound effects + currently fixing projects`;
+Last updated on [--(07/06/26)--] <br>
+Updates: organized the schedule for project 2`;
 
 const contactsMessage = 
 `<span>email: <a href="mailto:officiald4wn@gmail.com">officiald4wn@gmail.com</a></span><br>
