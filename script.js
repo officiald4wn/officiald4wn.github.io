@@ -2,8 +2,8 @@
 const aboutMessage = 
 `Welcome to the reworked webpage. <br>
 This is still in heavy development. <br><br>
-Last updated on [--(07/06/26)--] <br>
-Updates: organized the schedule for project 2`;
+Last updated on [--(07/24/26)--] <br>
+Updates: im finally back chat`;
 
 const contactsMessage = 
 `<span>email: <a href="mailto:officiald4wn@gmail.com">officiald4wn@gmail.com</a></span><br>
@@ -12,7 +12,7 @@ const contactsMessage =
 <span>discord: @official.d4wn</span>`;
 
 const projectsMessage = 
-`<span>[as of --(6/11/26)--]</span><br>
+`<span>[as of --(06/11/26)--]</span><br>
 <span>-there are (2) projects currently available</span><br>
 <span><a href="/_projects/Project_1/index.html" target="_blank">Project 1</a> => (Reviewer Formatter)</span><br>
 <span><a href="/_projects/Project_2/index.html" target="_blank">Project 2</a> => (auto scheduler)</span>`;
