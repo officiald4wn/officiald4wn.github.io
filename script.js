@@ -12,10 +12,11 @@ const contactsMessage =
 <span>discord: @official.d4wn</span>`;
 
 const projectsMessage = 
-`<span>[as of --(06/11/26)--]</span><br>
-<span>-there are (2) projects currently available</span><br>
+`<span>[as of --(08/15/26)--]</span><br>
+<span>-there are (3) projects currently available</span><br>
 <span><a href="/_projects/Project_1/index.html" target="_blank">Project 1</a> => (Reviewer Formatter)</span><br>
-<span><a href="/_projects/Project_2/index.html" target="_blank">Project 2</a> => (auto scheduler)</span>`;
+<span><a href="/_projects/Project_2/index.html" target="_blank">Project 2</a> => (auto scheduler)</span><br>
+<span><a href="https://officiald4wn.github.io/soberly/" target="_blank">Project 3</a> => (Soberly [school project])</span>`;
 
 const wipMessage = 
 `Work in progress.`;
